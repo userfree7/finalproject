@@ -8,20 +8,35 @@ import {
     Button,
 } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticlesCard.scss'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addLike, removeLike } from 'redux/likeReducer'
 
 type Props = {
+    id: number
     title: string
     description: string
     content: string
     image: string
 }
 
-const ArticlesCard = ({ title, description, content, image }: Props) => {
+const ArticlesCard = ({ id, title, description, content, image }: Props) => {
+    const isLiked = useAppSelector((state) => state.articlesLikeState[id])
+    const dispatch = useAppDispatch()
     return (
         <Card className="article">
             <CardMedia />
             <CardContent>
+                <IconButton
+                    onClick={() =>
+                        isLiked
+                            ? dispatch(removeLike(id))
+                            : dispatch(addLike(id))
+                    }
+                >
+                    {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+                </IconButton>
                 <div className="article-image">
                     <img src={image} alt="" />
                 </div>
@@ -42,16 +57,13 @@ const ArticlesCard = ({ title, description, content, image }: Props) => {
                 </div>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
                 <Button
                     className="btn-read"
                     variant="outlined"
                     color="secondary"
                     size="small"
                 >
-                    Читати
+                    Read More
                 </Button>
             </CardActions>
         </Card>

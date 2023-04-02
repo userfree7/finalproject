@@ -28,6 +28,7 @@ const ArticlesList = (props: Props) => {
                     ({ title, description, content, image }, id) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             <ArticlesCard
+                                id={id}
                                 title={title}
                                 description={description}
                                 content={content}

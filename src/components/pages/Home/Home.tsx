@@ -1,12 +1,12 @@
 import ArticlesList from 'components/ArticlesList/ArticlesList'
-import Swiper from 'components/Swiper/App'
+import { Slider } from 'components/Swiper/Slider'
 
 type Props = {}
 
 const Home = (props: Props) => {
     return (
         <>
-            <Swiper></Swiper>
+            <Slider></Slider>
             <ArticlesList></ArticlesList>
         </>
     )
