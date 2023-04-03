@@ -4,6 +4,7 @@ type Article = {
     description: string
     content: string
     image: string
+    category?: string
 }
 const articlesArray: Article[] = [
     {
@@ -12,6 +13,7 @@ const articlesArray: Article[] = [
         description: 'Oдна из самых действенных практик  перед сном.',
         content: 'Как правильно выполнять?',
         image: '/images/moon.png',
+        category: 'practice',
     },
     {
         id: 2,
@@ -19,6 +21,7 @@ const articlesArray: Article[] = [
         description: 'Чому їх можна поєднювати, але ніколи не варто змішувати?',
         content: 'Йога допускає можливість робити асани неідеально',
         image: '/images/sport.jpg',
+        category: 'practice',
     },
     {
         id: 3,
@@ -28,6 +31,7 @@ const articlesArray: Article[] = [
         content:
             'Йога - система упражнений для успокоения мятущегося ума и направления энергии в конструктивные каналы.',
         image: '/images/philosophy.jpg',
+        category: 'philosophy',
     },
     {
         id: 4,
@@ -37,6 +41,7 @@ const articlesArray: Article[] = [
         content:
             'Основу раціону йогів становлять такі продукти: молоко, мед, горіхи, свіжі овочі, фрукти та ягоди, зелень, крупи.',
         image: '/images/meal.jpg',
+        category: 'nutritional',
     },
     {
         id: 5,
@@ -46,6 +51,7 @@ const articlesArray: Article[] = [
         content:
             'Якщо ви давно мрієте освоїти йогу, то в нашій добірці ви знайдете кращі асани для початківців, які можна виконувати при будь-якому рівні фізичної підготовки.',
         image: '/images/asans.webp',
+        category: 'practice',
     },
     {
         id: 6,
@@ -55,6 +61,7 @@ const articlesArray: Article[] = [
         content:
             'Масштабне свято йоги в первозданній красі Карпат. Оживляюча сила музики і мантр, природа, пізнання, відновлення – йога квінтесенція року чекає вас! В цьому році за музичний і розважальний дух фестивалю відповідають найцікавіші гурти з України',
         image: '/images/carpathians.jpg',
+        category: 'yogatours',
     },
 ]
 export default articlesArray
