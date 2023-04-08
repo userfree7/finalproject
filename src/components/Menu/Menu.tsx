@@ -10,6 +10,7 @@ const Menu = (props: Props) => {
             <MenuItem to="/yogatours">Yoga Tours</MenuItem>
             <MenuItem to="/philosophy">Philosophy</MenuItem>
             <MenuItem to="/nutritional">Nutritional Advice</MenuItem>
+            <MenuItem to="/favourites">Favourites</MenuItem>
         </>
     )
 }

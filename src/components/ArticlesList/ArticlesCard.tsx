@@ -12,6 +12,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticlesCard.scss'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addLike, removeLike } from 'redux/likeReducer'
+import { Link } from 'react-router-dom'
 
 type Props = {
     id: number
@@ -63,7 +64,7 @@ const ArticlesCard = ({ id, title, description, content, image }: Props) => {
                     color="secondary"
                     size="small"
                 >
-                    Read More
+                    <Link to={`/articles/${id}`}>Read More</Link>
                 </Button>
             </CardActions>
         </Card>
