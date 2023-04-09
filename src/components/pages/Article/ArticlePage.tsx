@@ -1,3 +1,4 @@
+import Reviews from 'components/Reviews/Reviews'
 import { useParams } from 'react-router-dom'
 import articlesArray, { Article, getArticlesObject } from 'utils/articlesArray'
 
@@ -16,15 +17,15 @@ const ArticlePage = ({
 
     return (
         <div>
-            {/* <div>{articlesObject[parseInt(id!)].image}</div> */}
-            <div>{articlesObject[parseInt(id!)].title}</div>
-            <div>{articlesObject[parseInt(id!)].description}</div>
-            <div>{articlesObject[parseInt(id!)].content}</div>
             <div
                 dangerouslySetInnerHTML={{
                     __html: articlesObject[parseInt(id!)].fulldescription,
                 }}
             ></div>
+            <div>{articlesObject[parseInt(id!)].title}</div>
+            <div>{articlesObject[parseInt(id!)].description}</div>
+            <div>{articlesObject[parseInt(id!)].content}</div>
+            <Reviews></Reviews>
         </div>
     )
 }
